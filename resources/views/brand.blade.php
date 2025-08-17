@@ -67,6 +67,7 @@
                     <li><a href="#features" class="nav-link"><span>Features</span></a></li>
                     <li><a href="#technology" class="nav-link"><span>Technology</span></a></li>
                     <li><a href="#industries" class="nav-link"><span>Industries</span></a></li>
+                    <li><a href="#team" class="nav-link"><span>Team</span></a></li>
                     <li><a href="#about" class="nav-link"><span>About</span></a></li>
                     <li><a href="#contact" class="nav-link"><span>Contact</span></a></li>
                     {{-- <li class="dropdown">
@@ -293,6 +294,52 @@
         </div>
     </section>
 
+    <!-- Team Section -->
+    <section id="team" class="team-section bg-gray-light py-20">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Meet Our Team</h2>
+                <p>Passionate professionals driving innovation and excellence</p>
+            </div>
+            <div class="team-grid">
+                @foreach($teamMembers as $member)
+                <div class="team-card" data-aos="fade-up" data-aos-delay="{{ 100 + $loop->index * 80 }}">
+                    <div class="team-avatar">
+                        @if($member->avatar)
+                        <img src="{{ Storage::url($member->avatar) }}" alt="{{ $member->name }}">
+                        @else
+                        <div class="team-avatar-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        @endif
+                    </div>
+                    <h3 class="team-name">{{ $member->name }}</h3>
+                    <div class="team-position">{{ $member->position }}</div>
+                    <p class="team-bio">{{ Str::limit($member->bio, 90) }}</p>
+                    @if($member->social_links && is_array($member->social_links) && count($member->social_links))
+                    <div class="team-social">
+                        @foreach($member->social_links as $link)
+                        <a href="{{ $link }}" target="_blank" class="team-social-link">
+                            @if(Str::contains($link, 'twitter'))
+                            <i class="fab fa-twitter"></i>
+                            @elseif(Str::contains($link, 'linkedin'))
+                            <i class="fab fa-linkedin"></i>
+                            @elseif(Str::contains($link, 'facebook'))
+                            <i class="fab fa-facebook"></i>
+                            @elseif(Str::contains($link, 'github'))
+                            <i class="fab fa-github"></i>
+                            @else
+                            <i class="fas fa-link"></i>
+                            @endif
+                        </a>
+                        @endforeach
+                    </div>
+                    @endif
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
@@ -536,7 +583,7 @@
             <div class="footer-content">
                 <div class="footer-col footer-about">
                     <div class="footer-logo">
-                        <img class="logo-img" alt="{{ $settings['site_name'] ?? 'Kaynat' }}"
+                        <img class="logo-img-big" alt="{{ $settings['site_name'] ?? 'Kaynat' }}"
                             src="{{ !empty($settings['site_logo']) ? asset('storage/' . $settings['site_logo']) : asset('images/kaynat-log.png') }}">
                         <div class="logo-text">
                             <span class="logo-main">{{ $settings['site_name'] ?? 'KAYNAT' }}</span>
@@ -588,22 +635,25 @@
                         <li><i class="fas fa-phone-alt"></i> {{ $settings['contact_phone'] ?? '+93 700 000 000' }}</li>
                         <li><i class="fas fa-envelope"></i> {{ $settings['contact_email'] ?? 'info@kaynat.com' }}</li>
                     </ul>
-                    <div class="footer-newsletter">
+                    {{-- <div class="footer-newsletter">
                         <h4>Subscribe to Newsletter</h4>
-                        <form>
-                            <input type="email" placeholder="Your Email">
+                        <form method="POST" action="{{ route('newsletter.subscribe') }}">
+                            @csrf
+                            <input type="email" name="email" placeholder="Your Email" required>
                             <button type="submit"><i class="fas fa-paper-plane"></i></button>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="footer-bottom">
                 <div class="copyright">
                     &copy; {{ date('Y') }} {{ $settings['site_name'] ?? 'Kaynat' }}. All Rights Reserved.
                 </div>
+
                 <div class="footer-legal">
-                    <a href="#">{{ $settings['privacy_policy_label'] ?? 'Privacy Policy' }}</a>
-                    <a href="#">{{ $settings['terms_label'] ?? 'Terms of Service' }}</a>
+                    Powered by <a href="https://www.kic.af" target="_blank">KIC</a>
+                    {{-- <a href="#">{{ $settings['privacy_policy_label'] ?? 'Privacy Policy' }}</a>
+                    <a href="#">{{ $settings['terms_label'] ?? 'Terms of Service' }}</a> --}}
                 </div>
             </div>
         </div>

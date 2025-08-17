@@ -5,8 +5,7 @@
         <div class="flex items-center space-x-4 mt-4 md:mt-0">
             <input type="text" wire:model="search" placeholder="Search team members..."
                 class="w-full md:w-64 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
-            <button type="button" wire:click="create"
-                class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition">
+            <button type="button" wire:click="create" class="primary-button">
                 <i class="fas fa-plus mr-2"></i> Add New
             </button>
         </div>
@@ -167,8 +166,7 @@
                     <div class="px-6 py-4 bg-gray-50 border-t border-gray-200 flex justify-end space-x-2">
                         <button type="button" @click="show = false"
                             class="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300">Cancel</button>
-                        <button type="submit"
-                            class="px-4 py-2 rounded bg-primary text-white hover:bg-primary-dark">Save</button>
+                        <button type="submit" class="secondary-button">Save</button>
                     </div>
                 </form>
             </div>
