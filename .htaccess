@@ -1,0 +1,11 @@
+To directly serve your website from the `public` directory, use the following `.htaccess` configuration:
+
+```apache
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+```
+
+This configuration will internally redirect all requests to the `public` directory, allowing you to access your website's `index.php` (or `index.html`) directly.
