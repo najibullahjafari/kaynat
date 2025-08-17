@@ -52,7 +52,7 @@
                             title="Edit">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button @click="confirmDeleteId = {{ $item->id }}"
+                        <button wire:click="confirmDelete({{ $item->id }})"
                             class="p-2 rounded hover:bg-gray-100 text-red-600" title="Delete">
                             <i class="fas fa-trash"></i>
                         </button>
@@ -182,16 +182,21 @@
             </div>
         </div>
 
-        <!-- Delete Confirmation Modal -->
-        <div x-show="confirmDeleteId !== null"
-            class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <!-- Delete Confirmation Modal (with browser event support) -->
+        <div x-data="{ show: false, id: null, message: '' }" x-init="
+                window.addEventListener('confirm-delete', e => {
+                    show = true;
+                    id = e.detail.id;
+                    message = e.detail.message || 'Are you sure you want to delete this solution?';
+                });
+            " x-show="show" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
             <div class="bg-white rounded-lg shadow-xl w-full max-w-sm mx-4 p-6 text-center" x-transition>
                 <h3 class="text-lg font-semibold mb-4">Delete Solution</h3>
-                <p class="mb-6 text-gray-600">Are you sure you want to delete this solution?</p>
+                <p class="mb-6 text-gray-600" x-text="message">Are you sure you want to delete this solution?</p>
                 <div class="flex justify-center space-x-4">
-                    <button @click="confirmDeleteId = null"
+                    <button @click="show = false; id = null; message = ''"
                         class="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300">Cancel</button>
-                    <button @click="$wire.delete(confirmDeleteId); confirmDeleteId = null"
+                    <button @click="$wire.delete(id); show = false; id = null; message = ''"
                         class="px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700">Delete</button>
                 </div>
             </div>

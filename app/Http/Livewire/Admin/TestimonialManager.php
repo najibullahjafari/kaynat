@@ -120,6 +120,10 @@ class TestimonialManager extends Component
     public function confirmDelete($id)
     {
         $this->confirmDeleteId = $id;
+        $this->dispatchBrowserEvent('confirm-delete', [
+            'id' => $id,
+            'message' => 'Are you sure you want to delete this testimonial?'
+        ]);
     }
 
     public function delete($id)

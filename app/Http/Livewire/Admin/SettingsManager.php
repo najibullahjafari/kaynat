@@ -20,8 +20,8 @@ class SettingsManager extends Component
         'contact' => 'Contact Information',
         'social' => 'Social Media',
         'seo' => 'SEO Settings',
-        'appearance' => 'Appearance',
-        'email' => 'Email Settings',
+        // 'appearance' => 'Appearance',
+        // 'email' => 'Email Settings',
     ];
 
     protected $listeners = ['groupChanged' => 'changeGroup'];
@@ -99,11 +99,11 @@ class SettingsManager extends Component
                     'value' => '',
                     'type' => 'image'
                 ],
-                'default_language' => [
-                    'value' => 'en',
-                    'type' => 'select',
-                    'options' => ['en' => 'English', 'fa' => 'فارسی', 'ps' => 'پښتو']
-                ],
+                // 'default_language' => [
+                //     'value' => 'en',
+                //     'type' => 'select',
+                //     'options' => ['en' => 'English', 'fa' => 'فارسی', 'ps' => 'پښتو']
+                // ],
                 'timezone' => [
                     'value' => 'Asia/Kabul',
                     'type' => 'select',

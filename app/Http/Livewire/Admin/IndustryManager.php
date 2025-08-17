@@ -83,6 +83,13 @@ class IndustryManager extends Component
         $this->dispatchBrowserEvent('notify', ['type' => 'success', 'message' => $message]);
         $this->tempImage = null;
     }
+    public function confirmDelete($id)
+    {
+        $this->dispatchBrowserEvent('confirm-delete', [
+            'id' => $id,
+            'message' => 'Are you sure you want to delete this industry category?'
+        ]);
+    }
 
     public function delete(IndustryCategory $item)
     {

@@ -120,6 +120,10 @@ class TechnologyManager extends Component
     public function confirmDelete($id)
     {
         $this->confirmDeleteId = $id;
+        $this->dispatchBrowserEvent('confirm-delete', [
+            'id' => $id,
+            'message' => 'Are you sure you want to delete this technology?'
+        ]);
     }
 
     public function delete($id)

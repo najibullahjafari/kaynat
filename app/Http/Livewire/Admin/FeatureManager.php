@@ -72,6 +72,13 @@ class FeatureManager extends Component
         $this->showModal = false;
         $this->dispatchBrowserEvent('notify', ['type' => 'success', 'message' => $message]);
     }
+    public function confirmDelete($id)
+    {
+        $this->dispatchBrowserEvent('confirm-delete', [
+            'id' => $id,
+            'message' => 'Are you sure you want to delete this feature?'
+        ]);
+    }
 
     public function delete(Feature $item)
     {
