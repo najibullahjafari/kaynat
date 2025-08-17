@@ -13,6 +13,7 @@ use App\Http\Livewire\Admin\IndustryManager;
 use App\Http\Livewire\Admin\TestimonialManager;
 use App\Http\Livewire\Admin\TeamMemberManager;
 use App\Http\Livewire\Admin\ContactManager;
+use App\Http\Livewire\Admin\ProfileManager;
 use App\Http\Livewire\Admin\SettingsManager;
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,7 @@ Route::post('/set-locale', function (\Illuminate\Http\Request $request) {
 })->name('setLocale');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile-manager', ProfileManager::class)->name('profile.admin.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

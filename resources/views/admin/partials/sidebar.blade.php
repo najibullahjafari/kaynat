@@ -67,6 +67,21 @@
                     <span>Settings</span>
                 </x-admin.nav-link>
             </nav>
+            <div class="mt-8 border-t pt-4">
+                <a href="{{ route('profile.admin.edit') }}"
+                    class="flex items-center space-x-2 px-2 py-2 rounded hover:bg-gray-100 transition">
+                    <i class="fa fa-user-edit text-gray-500"></i>
+                    <span>Edit Profile</span>
+                </a>
+                <form method="POST" action="{{ route('logout') }}" class="mt-2">
+                    @csrf
+                    <button type="submit"
+                        class="flex items-center space-x-2 px-2 py-2 rounded hover:bg-gray-100 transition w-full text-left">
+                        <i class="fa fa-sign-out-alt text-gray-500"></i>
+                        <span>Logout</span>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
