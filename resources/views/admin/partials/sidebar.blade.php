@@ -7,7 +7,8 @@
         </div>
         <div class="flex flex-col flex-grow px-4 py-4 overflow-y-auto">
             <nav class="flex-1 space-y-2">
-                <x-admin.nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
+                {{-- <x-admin.nav-link href="{{ route('admin.dashboard') }}"
+                    :active="request()->routeIs('admin.dashboard')">
                     <x-icons.dashboard class="w-5 h-5" />
                     <span>Dashboard</span>
                 </x-admin.nav-link>
@@ -21,7 +22,7 @@
                 <x-admin.nav-link href="{{ route('admin.sections') }}" :active="request()->routeIs('admin.sections')">
                     <x-icons.section class="w-5 h-5" />
                     <span>Sections</span>
-                </x-admin.nav-link>
+                </x-admin.nav-link> --}}
 
                 <x-admin.nav-link href="{{ route('admin.solutions') }}" :active="request()->routeIs('admin.solutions')">
                     <x-icons.solution class="w-5 h-5" />
