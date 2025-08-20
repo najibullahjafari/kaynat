@@ -238,6 +238,9 @@ img {
     align-items: center;
     justify-content: space-between;
 }
+.navbar-brand {
+    display: flex;
+}
 
 .logo-container {
     display: flex;
@@ -805,7 +808,7 @@ img {
 
 .feature-item {
     display: flex;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 .feature-icon {
@@ -1226,8 +1229,9 @@ img {
 
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 50px;
+    margin-bottom: 30px;
 }
 
 .about-text {
@@ -1642,13 +1646,16 @@ img {
 
 .footer-legal {
     display: flex;
-    gap: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    transition: var(--transition);
 }
 
 .footer-legal a {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.9rem;
     transition: var(--transition);
+    margin-left: 5px;
 }
 
 .footer-legal a:hover {

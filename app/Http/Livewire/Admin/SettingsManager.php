@@ -87,6 +87,10 @@ class SettingsManager extends Component
                     'value' => 'Kaynat Precision in Motion',
                     'type' => 'text'
                 ],
+                'site_year_experience' => [
+                    'value' => '8 years',
+                    'type' => 'text'
+                ],
                 'site_tagline' => [
                     'value' => 'Advanced GPS Tracking Solutions',
                     'type' => 'text'
@@ -98,6 +102,28 @@ class SettingsManager extends Component
                 'site_favicon' => [
                     'value' => '',
                     'type' => 'image'
+                ],
+                'site_about_kaynat_image' => [
+                    'value' => '',
+                    'type' => 'image'
+                ],
+                'site_kaynat_vision' => [
+                    'value' => 'To be the most trusted provider of location intelligence solutions in our region.',
+                    'type' => 'textarea'
+                ],
+                'site_kaynat_values' => [
+                    'value' => 'Innovation, Reliability, Customer Focus, and Integrity guide everything we do.',
+                    'type' => 'textarea'
+                ],
+                'site_description' => [
+                    'value' => 'Kaynat provides cutting-edge GPS tracking solutions for fleet management, personal tracking, and asset monitoring with precision and reliability.',
+                    'type' => 'textarea'
+                ],
+                'site_about_kaynat' => [
+                    'value' => 'Founded in 2015, Kaynat has grown to become a leading provider of GPS tracking solutions in the region. Our mission is to deliver precise, reliable tracking technology that helps businesses optimize their operations and individuals stay connected.
+
+                                With our headquarters in Kabul and regional offices across Afghanistan, we combine global technology standards with local market understanding to provide solutions tailored to our clients\' needs.',
+                    'type' => 'textarea'
                 ],
                 // 'default_language' => [
                 //     'value' => 'en',

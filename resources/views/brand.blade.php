@@ -94,11 +94,14 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-                    <span>Precision Tracking</span>
-                    <span>For A Moving World</span>
+                    {{$settings['site_tagline'] ?? 'Precision in Motion'}}
                 </h1>
-                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Advanced GPS solutions for fleet
-                    management, asset tracking, and personal safety</p>
+
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">{{ $settings['site_description'] ??
+                    'Advanced
+                    GPS solutions for fleet
+                    management, asset tracking, and personal safety'
+                    }}</p>
                 <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
                     <a href="#solutions" class="btn btn-primary">Explore Solutions</a>
                     <a href="#contact" class="btn btn-secondary">Contact Sales</a>
@@ -420,30 +423,33 @@
                         <h2>About Kaynat</h2>
                         <p>Precision in Motion</p>
                     </div>
-                    <p>Founded in 2015, Kaynat has grown to become a leading provider of GPS tracking solutions in the
-                        region. Our mission is to deliver precise, reliable tracking technology that helps businesses
-                        optimize their operations and individuals stay connected.</p>
-                    <p>With our headquarters in Kabul and regional offices across Afghanistan, we combine global
-                        technology standards with local market understanding to provide solutions tailored to our
-                        clients' needs.</p>
+                    <p>{{ $settings['site_about_kaynat'] ?? "Founded in 2015, Kaynat has grown to become a leading
+                        provider of GPS tracking solutions in the region. Our mission is to deliver precise, reliable
+                        tracking technology that helps businesses optimize their operations and individuals stay
+                        connected. With our headquarters in Kabul and regional offices across Afghanistan, we combine
+                        global technology standards with local market understanding to provide solutions tailored to our
+                        clients' needs." }}</p>
                     <div class="about-features">
                         <div class="feature-item">
                             <i class="fas fa-bullseye"></i>
                             <h4>Our Vision</h4>
-                            <p>To be the most trusted provider of location intelligence solutions in our region.</p>
+                            <p>{{ $settings['site_kaynat_vision'] ?? 'To be the most trusted provider of location
+                                intelligence solutions in our region.' }}</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-hand-holding-heart"></i>
                             <h4>Our Values</h4>
-                            <p>Innovation, Reliability, Customer Focus, and Integrity guide everything we do.</p>
+                            <p>{{ $settings['site_kaynat_values'] ?? 'Innovation, Reliability, Customer Focus, and
+                                Integrity guide everything we do.' }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-image" data-aos="fade-left">
                     <div class="image-container">
-                        <img src="{{ asset('images/logo/kaynat-log.png') }}" alt="Kaynat Team">
+                        <img src="{{ !empty($settings['site_about_kaynat_image']) ? asset('storage/' . $settings['site_about_kaynat_image']) : asset('images/logo/kaynat-log.png') }}"
+                            alt="Kaynat Team">
                         <div class="experience-badge">
-                            <div class="years">8+</div>
+                            <div class="years">{{ $settings['site_year_experience'] ?? '8+' }}</div>
                             <div class="label">Years Experience</div>
                         </div>
                     </div>
@@ -590,8 +596,11 @@
                             <span class="logo-sub">{{ $settings['site_tagline'] ?? 'PRECISION IN MOTION' }}</span>
                         </div>
                     </div>
-                    <p>{{ $settings['footer_about'] ?? 'Providing cutting-edge GPS tracking solutions to help businesses
-                        and individuals stay connected and in control.' }}</p>
+                    <p>{{ $settings['site_description'] ??
+                        'Advanced
+                        GPS solutions for fleet
+                        management, asset tracking, and personal safety'
+                        }}</p>
                     <div class="footer-social">
                         @if(!empty($settings['facebook_url']))<a href="{{ $settings['facebook_url'] }}"><i
                                 class="fab fa-facebook-f"></i></a>@endif
@@ -651,7 +660,7 @@
                 </div>
 
                 <div class="footer-legal">
-                    Powered by <a href="https://www.kic.af" target="_blank">KIC</a>
+                    Powered by <a href="https://www.kic.af" target="_blank">Kabul Innovation Center</a>
                     {{-- <a href="#">{{ $settings['privacy_policy_label'] ?? 'Privacy Policy' }}</a>
                     <a href="#">{{ $settings['terms_label'] ?? 'Terms of Service' }}</a> --}}
                 </div>
