@@ -88,7 +88,7 @@ class SettingsManager extends Component
                     'type' => 'text'
                 ],
                 'site_year_experience' => [
-                    'value' => '8 years',
+                    'value' => '8+',
                     'type' => 'text'
                 ],
                 'site_feature_image' => [
