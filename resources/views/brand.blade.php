@@ -173,7 +173,7 @@
                     <div class="dashboard-mockup">
                         <div class="screen">
                             <div class="map-view"
-                                style="background: url('{{ asset('images/gps.jpg') }}') center center/cover no-repeat;">
+                                style="background: url('{{ $settings['site_feature_image'] ? asset('storage/' . $settings['site_feature_image']) : asset('images/gps.jpg') }}') center center/cover no-repeat;">
                                 <div class="vehicle-marker"></div>
                                 <div class="route-line"></div>
                             </div>

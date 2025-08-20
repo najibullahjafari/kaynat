@@ -91,6 +91,10 @@ class SettingsManager extends Component
                     'value' => '8 years',
                     'type' => 'text'
                 ],
+                'site_feature_image' => [
+                    'value' => '',
+                    'type' => 'image'
+                ],
                 'site_tagline' => [
                     'value' => 'Advanced GPS Tracking Solutions',
                     'type' => 'text'
