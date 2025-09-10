@@ -24,6 +24,15 @@
         rel="stylesheet">
 
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NJ405SLEJJ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NJ405SLEJJ');
+</script>
 
 <body id="body">
     <!-- Preloader -->
