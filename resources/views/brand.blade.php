@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- Favicon --}}
     <link rel="icon" type="image/png"
-        href="{{ $settings['site_favicon'] ? asset('storage/' . $settings['site_favicon']) : asset('img/favicon.png') }}">
+        href="{{ !empty($settings['site_favicon']) ? asset('storage/' . $settings['site_favicon']) : asset('img/favicon.png') }}">
     {{-- Logo --}}
     <link rel="stylesheet" href="css/new.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -182,7 +182,7 @@
                     <div class="dashboard-mockup">
                         <div class="screen">
                             <div class="map-view"
-                                style="background: url('{{ $settings['site_feature_image'] ? asset('storage/' . $settings['site_feature_image']) : asset('images/gps.jpg') }}') center center/cover no-repeat;">
+                                style="background: url('{{ !empty($settings['site_feature_image']) ? asset('storage/' . $settings['site_feature_image']) : asset('images/gps.jpg') }}') center center/cover no-repeat;">
                                 <div class="vehicle-marker"></div>
                                 <div class="route-line"></div>
                             </div>

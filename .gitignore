@@ -45,3 +45,7 @@ Thumbs.db
 *.log
 # public/images
 public/img/slider
+
+
+#Ignore vscode AI rules
+.github\instructions\codacy.instructions.md
